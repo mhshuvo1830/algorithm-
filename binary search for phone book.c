@@ -36,7 +36,7 @@ int BinarySearch(const person arr[],int size, const char *Name)
  {
     return mid;
  }
- if(strcmp(arr[mid].name,Name)<*Name)
+ if(strcmp(arr[mid].name,Name)<&Name)
  {
     l=mid+1;
  }
@@ -49,7 +49,7 @@ int BinarySearch(const person arr[],int size, const char *Name)
     return -1;
 }
 
-int find(const person arr[],int size, const char *Name)
+/*int find(const person arr[],int size, const char *Name)
 {
     for(int i=0; i<size;i++)
     {
@@ -59,7 +59,7 @@ int find(const person arr[],int size, const char *Name)
         }
     }
     return -1;
-}
+}*/
 int main()
 {
  person persons[MAX_SIZE];
@@ -78,7 +78,7 @@ sort(persons,numPersons);
         char name[50];
         printf("\nEnter name: ");
         scanf(" %s", name);
-         int result = find(persons, numPersons,name);
+         int result = BinarySearch(persons, numPersons,name);
 
     if (result != -1) {
         printf("\nPerson found! index:%d\n",result);
